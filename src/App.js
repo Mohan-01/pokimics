@@ -4,6 +4,8 @@ import './App.css'
 import Form from './components/Form.js'
 import Card from './components/Card.js'
 
+const url = `https://pokimics-api.onrender.com/api/v1/comics`
+
 function App() {
   const [data, setData] = useState([])
   const [isCreate, setisCreate] = useState(false)
@@ -21,7 +23,6 @@ function App() {
 
   useEffect(() => {
     // get api
-    const url = `http://localhost:2401/api/v1/comics`
 
     fetch(url)
       .then((res) => res.json())
@@ -49,7 +50,7 @@ function App() {
     if (country) bodyData.country = country
     if (price) bodyData.price = price
     if (photo) bodyData.photo = photo
-    const url = `http://localhost:2401/api/v1/comics`
+
     fetch(url, {
       method: 'POST',
       headers: {
@@ -79,7 +80,6 @@ function App() {
     const file = e.target.photo.files[0]
     const photo = file ? await converImageToBase64(file) : null
 
-    const url = `http://localhost:2401/api/v1/comics/-1/${name}`
     const bodyData = {}
     if (name) bodyData.name = name
     if (author) bodyData.author = author
@@ -89,7 +89,7 @@ function App() {
     if (price) bodyData.price = price
     if (photo) bodyData.photo = photo
 
-    fetch(url, {
+    fetch(`${url}/-1/${name}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -109,8 +109,7 @@ function App() {
   const deleteComic = () => {
     const name = document.getElementById('name').value
 
-    const url = `http://localhost:2401/api/v1/comics/-1/${name}`
-    fetch(url, {
+    fetch(`${url}/-1/${name}`, {
       method: 'DELETE',
     })
       .then((res) => res.json())

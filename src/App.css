@@ -1,38 +1,188 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+* {
+  box-sizing: border-box;
+  background-color: rgb(59, 54, 54);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+body {
+  width: 100%;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.logo {
+  /* position: absolute; */
+  display: block;
+  width: 100px;
+  height: max-content;
+  left: 1em;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.forms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.form-btns {
+  display: flex;
+  /* width: 100%; */
+  justify-content: flex-end;
+}
+
+.all-forms {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.form-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cards {
+  max-width: 99%;
+  margin: 1.2em auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.card {
+  border-radius: 3px;
+  /* -webkit-box-shadow: 0 0 0.5rem rgb(0, 199, 249); */
+  box-shadow: 0 0 0.4em 0.2em rgba(236, 207, 240, 0.7);
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 20em;
+  border-radius: 0.5em;
+}
+
+.content {
+  font-size: 1.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.comic-image {
+  position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 83%, 0% 98%);
+  clip-path: polygon(0 0, 100% 0%, 100% 83%, 0% 98%);
+  height: 22rem;
+  object-fit: cover;
+}
+
+table {
+  display: inline;
+  border-spacing: 0.4em;
+}
+
+button {
+  margin: 0 0.24%;
+  padding: 4px;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  text-transform: uppercase;
+}
+
+button:hover {
+  font-weight: bold;
+  background-color: white;
+  color: black;
+
+  box-shadow: 2px 2px white, -2px -2px wheat;
+  border-radius: 5px;
+}
+
+label {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+input {
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid white;
+  color-scheme: dark;
+}
+
+input[type='file'] {
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+a {
+  margin: 0 2% 2%;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 10px;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+a:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+@media screen and (max-width: 760px) {
+  h1 {
+    font-size: 0.8em;
   }
-  to {
-    transform: rotate(360deg);
+  button {
+    font-size: 0.7em;
+  }
+  .card {
+    width: 80%;
+    height: 80vh;
+    justify-content: space-between;
+    padding: 1em 0;
   }
 }
